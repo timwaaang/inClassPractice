@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1538555270717.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5385E299",
+    "lastKnownWriteTime" : 3327990127295488865,
+    "last_content_update" : 1538555270717,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "51B2C7D1",
+        "caption" : "studentID",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=studentID&cache_key=51B2C7D1",
+        "displayedObservations" : "95",
+        "environment" : "",
+        "object" : "studentID",
+        "preview" : "0",
+        "totalObservations" : "95",
+        "variables" : "1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
