@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1539760245389.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3020559359",
+    "id" : "8E514275",
+    "lastKnownWriteTime" : 1539760371,
+    "last_content_update" : 1539762364239,
+    "path" : "~/GitHub/inClassPractice/2018-10-17.Rmd",
+    "project_path" : "2018-10-17.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "cursorPosition" : "30,0",
+        "scrollLine" : "21",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
