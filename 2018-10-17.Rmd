@@ -26,9 +26,14 @@ aa<-str_split_fixed(filmVotingData$請選擇你最喜歡的影片二部,", ",3)
 bb<-str_c(aa)
 table(bb)
 ```
+```{r}
+gsSurvey<-gs_key("1mC9bnxj11NCNoOCw0Vmn4nxERbHtLjeGo9v9C9b2GDE")  #download sheet information as an object
+classSurvey<-gs_read(gsSurvey,ws=1) #access the 1st worksheet
+```
 
 ```{r}
-
+library(googlesheets)
+gs_auth(new_user = TRUE)
 ```
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 

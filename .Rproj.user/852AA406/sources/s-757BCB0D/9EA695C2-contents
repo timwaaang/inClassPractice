@@ -1,0 +1,92 @@
+---
+title: "2018-10-24"
+output: html_notebook
+---
+```{r}
+library(lubridate)
+library(stringr)
+library(googlesheets)
+```
+
+```{r}
+StuDF <- data.frame(
+  StuID=c(1,2,3,4,5),
+  name=c("小明","大雄","胖虎","小新","大白"),
+  score=c(80,60,90,70,50)
+  )
+StuDF 
+```
+
+
+```{r}
+names(StuDF) 
+colnames(StuDF)
+```
+
+```{r}
+rownames(StuDF)
+```
+
+```{r}
+StuDF[c(1,4),]
+StuDF[-c(1,4),]
+```
+
+```{r}
+StuDF[c(T,F,F,F,F),c(F,T,F)]
+StuDF[c(T,F,F,T,F),]
+```
+
+```{r}
+head(classSurvey,10)
+```
+
+```{r}
+a<-c(T,T,F,F,T,F,F)
+sum(a)
+```
+
+```{r}
+(StuDF$score >= 80)
+(StuDF$name == "小新")
+```
+
+```{r}
+which(StuDF$score >= 80)
+which(StuDF$name == "小新")
+```
+
+```{r}
+StuDF[(StuDF$name == "小新"),2]
+```
+
+```{r}
+gsSurvey<-gs_key("1mC9bnxj11NCNoOCw0Vmn4nxERbHtLjeGo9v9C9b2GDE")  #download sheet information as an object
+classSurvey<-gs_read(gsSurvey,ws=1) #access the 1st worksheet
+```
+
+```{r}
+classSurvey[(classSurvey$性別 == "男"),]
+classSurvey[(classSurvey$本學期學分數 > 25),]
+(classSurvey$性別 == "男" | 
+    classSurvey$本學期學分數 > 25)
+ 
+```
+
+```{r}
+StuDF[,c(1,3)]
+StuDF[c(1,4),]
+```
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
