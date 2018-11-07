@@ -1,0 +1,62 @@
+---
+title: "2018-11-07"
+output: html_notebook
+---
+```{r}
+library(readr)
+collegeData <- read_csv("https://quality.data.gov.tw/dq_download_csv.php?nid=6231&md5_url=dda8fca407131483c1d8cbf3d61cf793")
+```
+
+```{r}
+library(dplyr)
+as.factor(collegeData$`日間∕進修別`)->collegeData$`日間∕進修別`
+as.factor(collegeData$等級別)->collegeData$等級別
+as.numeric(collegeData$一年級男生)->collegeData$一年級男生
+as.numeric(collegeData$一年級女生)->collegeData$一年級女生
+collegeData -> collegeData2
+```
+```{r}
+library(stringr)
+str_replace(collegeData$一年級男生, ",", "")->collegeData$一年級男生
+str_replace(collegeData$一年級女生, ",", "")->collegeData$一年級女生
+```
+
+```{r}
+collegeData %>% 
+  mutate(
+  `日間∕進修別`=as.factor(`日間∕進修別`), 
+   等級別=as.factor(等級別),  
+  一年級男生=as.numeric(一年級男生), 
+   一年級女生=as.numeric(一年級女生)) -> collegeData2
+```
+
+```{r}
+cl<-locale(grouping_mark = ",") # 創造cl來描述千分位符號使用","的習慣場景
+collegeData %>% 
+  mutate(
+    `日間∕進修別`=as.factor(`日間∕進修別`),
+    等級別=as.factor(等級別),
+    二年級男生=parse_number(二年級男生,locale=cl),
+    二年級女生=parse_number(二年級女生,locale=cl)
+  ) -> collegeData3
+```
+
+```{r}
+
+```
+
+
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
