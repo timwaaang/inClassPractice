@@ -1,0 +1,20 @@
+"0","library(readr)"
+"0","transcriptData <- read_csv(""https://raw.githubusercontent.com/tpemartin/github-data/master/transcript100_102.csv"")"
+"2","`curl` package not installed, falling back to using `url()`
+"
+"2","Parsed with column specification:
+cols(
+  學號 = col_character(),
+  學屆 = col_integer(),
+  學年 = col_integer(),
+  學期 = col_integer(),
+  學期修習學分 = col_integer(),
+  學期實得學分 = col_integer(),
+  學期成績 = col_integer(),
+  科目名稱 = col_character(),
+  學分數 = col_integer(),
+  修課人數 = col_integer(),
+  `必選修類別（必∕選∕通）` = col_character(),
+  上課時間及教室 = col_character()
+)
+"

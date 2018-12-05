@@ -1,0 +1,13 @@
+"0","minMaxFun <- function(x){"
+"0","  max(x)-> maxNumber"
+"0","  min(x)-> minNumber"
+"0","  paste0(""最大值： "",maxNumber, "" 最小值： "",minNumber) -> result"
+"0","  return(result)"
+"0","}"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
