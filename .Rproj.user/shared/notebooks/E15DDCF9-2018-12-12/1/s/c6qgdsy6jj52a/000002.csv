@@ -1,0 +1,57 @@
+"0","library(dplyr)"
+"2","
+Attaching package: ��dplyr��
+
+"
+"2","The following objects are masked from ��package:stats��:
+
+    filter, lag
+
+"
+"2","The following objects are masked from ��package:base��:
+
+    intersect, setdiff, setequal, union
+
+"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","libraryData$書籍館藏地 %>% as.factor %>% levels -> storageLocations"
+"0","storageLocations"
+"1"," [1]"
+"1"," ""1F指定參考書區""          "
+"1"," ""1F流通櫃檯""              "
+"1"," ""1F特展區""                "
+"1"," ""1F教師成長專區""          "
+"1","
+"
+"1"," [5]"
+"1"," ""1F通識悅讀專區""          "
+"1"," ""1F視聽區""                "
+"1"," ""1F寰宇開卷專區""          "
+"1"," ""1F職涯博覽專區""          "
+"1","
+"
+"1"," [9]"
+"1"," ""1F職涯博覽專區(創新創業)"""
+"1"," ""2F藝文展覽區""            "
+"1"," ""3F中文圖書區""            "
+"1"," ""4F日韓文圖書區""          "
+"1","
+"
+"1","[13]"
+"1"," ""4F外文圖書區""            "
+"1"," ""5F本校特藏""              "
+"1"," ""5F參考資料區""            "
+"1"," ""6F套書區""                "
+"1","
+"
+"1","[17]"
+"1"," ""6F視聽閉架區""            "
+"1"," ""民生校區流通櫃檯""        "
+"1","
+"

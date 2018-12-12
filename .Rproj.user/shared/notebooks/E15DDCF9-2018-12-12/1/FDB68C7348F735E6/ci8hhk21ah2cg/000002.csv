@@ -1,0 +1,13 @@
+"0","libraryData %>%"
+"0","  group_by(書籍館藏地) %>%"
+"0","  summarise("
+"0","    borrowCount=length(學號)"
+"0","  ) -> result"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","result"
