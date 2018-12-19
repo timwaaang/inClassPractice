@@ -1,0 +1,5 @@
+"0","plasticContainer <- list("
+"0","  greenBox=c(""paper"",""scissor""),     # location 1"
+"0","  redBox=c(1L,3L,2.5),               # location 2"
+"0","  blueBox=c(TRUE,FALSE,TRUE,TRUE)    # location 3"
+"0",")"

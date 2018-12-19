@@ -1,0 +1,12 @@
+"0","filmVotingData$請選擇你最喜歡的影片二部 %>%"
+"0","  str_split("", (?!(by))"") -> filmVotingResult"
+"2","Error in str_split(., "", (?!(by))"") : could not find function ""str_split""
+"
+"2","In addition: "
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
