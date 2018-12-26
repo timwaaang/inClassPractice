@@ -1,0 +1,10 @@
+"0","for(i in seq_along(符合條件學號)){"
+"0","  creditResults[[i]] <- totalCredits(符合條件學號[i])"
+"0","}"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
