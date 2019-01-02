@@ -1,0 +1,31 @@
+"0","library(readr)"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","library(tidyr)"
+"0","libraryData <- read_csv(""https://raw.githubusercontent.com/tpemartin/github-data/master/libraryData2.csv"")"
+"2","Parsed with column specification:
+cols(
+  ¾Ç¸¹ = col_character(),
+  ®ÑÄyÃþ§O = col_character(),
+  ®ÑÄy¦WºÙ = col_character(),
+  ®ÑÄy¥Xª©¤é´Á = col_integer(),
+  ®ÑÄyÀ]ÂÃ¦a = col_character(),
+  ®ÑÄy¤W¬[¦~¤ë = col_date(format = """"),
+  ¤J¾Ç¦~ = col_integer(),
+  ÅªªÌ¦~¯Å = col_integer(),
+  ¾Ç°| = col_character(),
+  ­É¾\®É¶¡ = col_datetime(format = """"),
+  ¾Ç´Á = col_integer(),
+  ¾Ç¦~ = col_integer(),
+  ¾Ç¨t = col_character()
+)
+"
+"0","libraryData %>%"
+"0","  group_by(å­¸é™¢) %>%"
+"0","  nest(.key=""å„é™¢å€Ÿé–±è³‡æ–™"") ->"
+"0","  libraryDataNested"

@@ -1,0 +1,95 @@
+---
+title: "2019-01-02"
+output: html_notebook
+---
+```{r}
+library(readr)
+transcriptData <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/transcript100_102.csv",
+                  col_types = cols(
+                    學期成績="n"
+                  ))
+
+totalCredits<-function(x){
+  transcriptData[transcriptData$學號==x,]->subsample 
+  subsample %>%
+    mutate(
+      及格=(學期成績>=60)
+    ) %>%
+    summarise(
+      學號=學號[1],
+      總修習學分數=sum(學分數),
+      總實得學分數=sum(學分數[及格])
+    )  
+}
+```
+
+```{r}
+library(dplyr)
+transcriptData$學號 %>% unique -> allStudentID
+allStudentCredits<-vector("list",length(allStudentID))
+#i<-3
+for(i in seq_along(allStudentID)){
+  studentID_i<-allStudentID[i]
+  studentID_i %>% totalCredits ->
+    allStudentCredits[[i]]}
+```
+
+```{r}
+library(readr)
+library(tidyr)
+libraryData <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/libraryData2.csv")
+libraryData %>%
+  group_by(學院) %>%
+  nest(.key="各院借閱資料") ->
+  libraryDataNested
+```
+
+```{r}
+libraryData %>%
+  group_by(學號,學年) %>%
+  summarise(
+    學年總借閱冊數=n()
+  ) -> libraryData2
+```
+
+```{r}
+# 不保留 題（1）
+libraryData %>%
+  group_by(學號,讀者年級) %>%
+  summarise(
+    年級總借閱冊數=n()
+  ) -> libraryData3
+
+# 保留題（1）
+libraryData %>%
+  group_by(學號,學年) %>%
+  mutate(
+    學年總借閱冊數=n()
+  ) %>%
+  group_by(學號,讀者年級) %>%
+  summarise(
+    年級總借閱冊數=n(),
+    學年總借閱冊數=學年總借閱冊數[1],
+    學系=學系[1],
+    學院=學院[1],
+    學年=學年[1]
+  ) -> libraryData3
+```
+
+```{r}
+
+```
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
